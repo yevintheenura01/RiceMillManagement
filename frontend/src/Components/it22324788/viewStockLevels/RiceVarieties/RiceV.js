@@ -1,45 +1,8 @@
-// import React from "react";
-
-// import { Link } from "react-router-dom";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-
-// function RiceV(props) {
-//   const { _id, varietyName } = props.variety || {};
-
-//   const  history = useNavigate();
-
-//   const deleteHandler = async()=>{
-//     await axios.delete(`http://localhost:5000/varieties/${_id}`)
-//       .then(res=>res.data)
-//       .then(() => history("/"))
-//       .then(() => history("/riceVarieties"))
-//       alert("Deleted Successfully");
-//   };
-//   return (
-//     <div>
-//       <table>
-//         <tr>
-//           <td>{_id}</td>
-//           <td>{varietyName}</td>
-//           <th>
-//             <Link to={`/riceVarieties/${_id}`}>
-//               <button className="RiceVBtn">Update</button>
-//             </Link>
-//             <button className="RiceVBtn" onClick={deleteHandler}>Delete</button>
-//           </th>
-//         </tr>
-//       </table>
-//     </div>
-//   );
-// }
-
-// export default RiceV;
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, TableRow, TableCell } from "@mui/material";
 
 const RiceV = (props) => {
   const { _id, varietyName } = props.variety || {};
@@ -56,21 +19,17 @@ const RiceV = (props) => {
   };
 
   return (
-    <tr>
-      <td>{_id}</td>
-      <td>{varietyName}</td>
-      <td>
+    <TableRow>
+      <TableCell>{_id}</TableCell>
+      <TableCell>{varietyName}</TableCell>
+      <TableCell>
         <Link to={`/riceVarieties/${_id}`}>
-          <Button variant="contained" color="primary" style={{width:"80px", height:"40px",margin:"0 10px 0 0"}}>Update</Button>
+          <Button variant="contained" color="primary" style={{marginRight:"1em"}}>Update</Button>
         </Link>
-        <Button variant="contained" color="error" onClick={deleteHandler} style={{width:"80px", height:"40px"}}>
-          Delete
-        </Button>
-      </td>
-    </tr>
+        <Button variant="contained" color="error" onClick={deleteHandler}>Delete</Button>
+      </TableCell>
+    </TableRow>
   );
 };
 
 export default RiceV;
-
-

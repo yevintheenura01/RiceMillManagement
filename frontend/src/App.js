@@ -27,6 +27,18 @@ import Wdamages from "./Components/it22324788/Workers/damages/Damages";
 import HomeYevin from "./Components/it22324788/Dashboard/Dashboard";
 import HomeNalinda from "./Components/it22331786/Home/Home";
 
+
+
+
+
+
+
+
+
+
+
+
+
 function App() {
   return (
     <div >

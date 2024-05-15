@@ -1,6 +1,5 @@
 import React from "react";
-
-import { TableRow, TableCell } from "@mui/material";
+import { TableRow, TableCell, Typography } from "@mui/material";
 
 function PaddyView(props) {
   const {
@@ -14,16 +13,32 @@ function PaddyView(props) {
   } = props.User || {};
 
   // Formatting date to display only date without time
-  //   const formattedDate = new Date(pDate).toLocaleDateString();
+  // const formattedDate = new Date(manufacture_DATE).toLocaleDateString();
+  // You can apply formatting if needed
+
   return (
     <TableRow>
-      <TableCell>{product_ID}</TableCell>
-      <TableCell>{bach_NO}</TableCell>
-      <TableCell>{poroduct_NAME}</TableCell>
-      <TableCell>{manufacture_DATE}</TableCell>
-      <TableCell>{expire_DATE}</TableCell>
-      <TableCell>{weight}</TableCell>
-      <TableCell>{discription}</TableCell>
+      <TableCell>
+        <Typography variant="body2">{product_ID}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{bach_NO}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{poroduct_NAME}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{manufacture_DATE}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{expire_DATE}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{weight}</Typography>
+      </TableCell>
+      <TableCell>
+        <Typography variant="body2">{discription}</Typography>
+      </TableCell>
     </TableRow>
   );
 }
