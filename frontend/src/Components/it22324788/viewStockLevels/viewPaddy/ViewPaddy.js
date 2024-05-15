@@ -1,78 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import Head from "../../Header/Header";
-// import ViewStock from "../../buttonGroups/viewStockBtns";
-// import PaddyView from "./PaddyV";
-// import axios from "axios";
-// import {
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableContainer,
-//   TableHead,
-//   TableRow,
-//   Paper,
-// } from "@mui/material";
-
-// const URL = "http://localhost:5000/paddy";
-
-// const fetchHandler = async () => {
-//   return await axios.get(URL).then((res) => res.data);
-// };
-
-// function ViewPaddy() {
-//   const [paddy, setPaddy] = useState([]);
-//   useEffect(() => {
-//     fetchHandler().then((data) => setPaddy(data.paddy));
-//   }, []);
-
-  
-
-
-
-//   return (
-//     <div>
-//       <Head />
-//       <ViewStock />
-//       <TableContainer component={Paper}>
-//         <Table>
-//           <TableHead>
-//             <TableRow>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 ID
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Weight
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Moisture content
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Purchase date
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Price
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Location
-//               </TableCell>
-//               <TableCell style={{ color: "white", fontWeight: "bold" }}>
-//                 Actions
-//               </TableCell>
-//             </TableRow>
-//           </TableHead>
-//           <TableBody>
-//             {paddy.map((Paddy, i) => (
-//               <PaddyView key={i} Paddy={Paddy} />
-//             ))}
-//           </TableBody>
-//         </Table>
-//       </TableContainer>
-//     </div>
-//   );
-// }
-
-// export default ViewPaddy;
-
 import React, { useEffect, useState } from "react";
 import Head from "../../Header/Header";
 import ViewStock from "../../buttonGroups/viewStockBtns";
@@ -86,8 +11,10 @@ import {
   TableHead,
   TableRow,
   Paper,
-  TextField // Import TextField for search input
+  TextField,
+  Box // Import Box for better layout control
 } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search"; // Import Search icon for search input
 
 const URL = "http://localhost:5000/paddy";
 
@@ -97,59 +24,44 @@ const fetchHandler = async () => {
 
 function ViewPaddy() {
   const [paddy, setPaddy] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetchHandler().then((data) => setPaddy(data.paddy));
   }, []);
 
-  // Function to handle search input change
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Filtering paddy based on search query
   const filteredPaddy = paddy.filter((Paddy) =>
     Paddy.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <div>
+    <Box>
       <Head />
       <ViewStock />
-      {/* Search input field */}
-      <TextField
-        label="Search by Location"
-        variant="outlined"
-        value={searchQuery}
-        onChange={handleSearchChange}
-        style={{ marginBottom: "20px" }}
-      />
+      <Box display="flex" alignItems="center" marginBottom="20px">
+        <SearchIcon style={{ marginRight: "10px", color: "#666" }} />
+        <TextField
+          label="Search by Location"
+          variant="outlined"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </Box>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableRow>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                ID
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Weight
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Moisture content
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Purchase date
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Price
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Location
-              </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Actions
-              </TableCell>
+            <TableRow style={{ backgroundColor: "#f5f5f5" }}>
+              <TableCell>ID</TableCell>
+              <TableCell>Weight</TableCell>
+              <TableCell>Moisture content</TableCell>
+              <TableCell>Purchase date</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Location</TableCell>
+              <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -159,7 +71,7 @@ function ViewPaddy() {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 }
 

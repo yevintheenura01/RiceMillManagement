@@ -11,6 +11,7 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Typography, // Import Typography for better text styling
 } from "@mui/material";
 
 const URL = "http://localhost:5000/users1";
@@ -20,9 +21,10 @@ const fetchHandler = async () => {
 };
 
 function ViewRice() {
-  const [users, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
+
   useEffect(() => {
-    fetchHandler().then((data) => setUser(data.users));
+    fetchHandler().then((data) => setUsers(data.users));
   }, []);
 
   return (
@@ -31,34 +33,34 @@ function ViewRice() {
       <ViewStock />
       <TableContainer component={Paper}>
         <Table>
-          <TableHead>
+          <TableHead style={{ backgroundColor: "#f5f5f5" }}>
             <TableRow>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Product ID
+              <TableCell>
+                <Typography variant="subtitle1">Product ID</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Batch No.
+              <TableCell>
+                <Typography variant="subtitle1">Batch No.</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Product Name
+              <TableCell>
+                <Typography variant="subtitle1">Product Name</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Manufacture Date
+              <TableCell>
+                <Typography variant="subtitle1">Manufacture Date</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Expiry Date
+              <TableCell>
+                <Typography variant="subtitle1">Expiry Date</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Weight
+              <TableCell>
+                <Typography variant="subtitle1">Weight</Typography>
               </TableCell>
-              <TableCell style={{ color: "white", fontWeight: "bold" }}>
-                Description
+              <TableCell>
+                <Typography variant="subtitle1">Description</Typography>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((User, i) => (
-              <RiceView key={i} User={User} />
+            {users.map((user, i) => (
+              <RiceView key={i} user={user} />
             ))}
           </TableBody>
         </Table>
