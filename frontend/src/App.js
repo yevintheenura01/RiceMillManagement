@@ -26,7 +26,7 @@ import Wdamages from "./Components/it22324788/Workers/damages/Damages";
 
 import HomeYevin from "./Components/it22324788/Dashboard/Dashboard";
 import HomeNalinda from "./Components/it22331786/Home/Home";
-
+import HomeManoj from "./Components/it22901712/Home/Home";
 
 
 
@@ -158,13 +158,13 @@ import HomeNalinda from "./Components/it22331786/Home/Home";
 
 
 //manoj
-
-
-
-
-
-
-
+import Users from './Components/it22901712/UserDetails/Users';
+import AddUser from './Components/it22901712/AddUser/AddUser';
+import Update from './Components/it22901712/Update/Update';
+import AddUser1 from './Components/it22901712/AddUser/AddUser1';
+import Users1 from './Components/it22901712/UserDetails/Users1';
+import Update1 from './Components/it22901712/Update/Update1';
+import Users2 from './Components/it22901712/UserDetails/Users2';
 
 
 
@@ -398,15 +398,15 @@ function App() {
 
 
 {/* manoj*/}
-
-
-
-
-
-
-
-
-
+<Route path="/manoj" element={<HomeManoj />} />
+<Route path="/mainHome" element={<HomeManoj />} />
+<Route path="/create" element={<Users />} />
+<Route path='/add' element={<AddUser/>}/>
+<Route path="/create/:id" element={<Update />} />
+<Route path='/add1' element={<AddUser1/>}/>
+<Route path="/create1" element={<Users1 />} />
+<Route path="/create1/:id" element={<Update1 />} />
+<Route path="/create2" element={<Users2 />} />
 
 
 
