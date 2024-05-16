@@ -11,9 +11,69 @@ const PaddyWarehouse = require("./Routes/PaddyWarehouseRoute");
 const InstructionRoute = require("./Routes/InstructionRoute");
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Tharaka
 const bodyParser = require("body-parser"); // body-parser
 const router = require("./Routes/productRoute");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25,9 +85,73 @@ const router2 = require("./Routes/userRoute2");
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //nalinda
 const userRoutes = require("./Routes/addeRouter"); 
 const userRoutes1 = require("./Routes/salaryRouter"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,7 +167,71 @@ const feedbackRouter = require("./Routes/FeedbackRoute"); // Feedback routes
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //senuri
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -51,6 +239,7 @@ const feedbackRouter = require("./Routes/FeedbackRoute"); // Feedback routes
 
 const app = express();
 const cors = require("cors");
+app.use(bodyParser.json()); // Parse JSON bodies
 
 //middleware
 app.use(express.json());
@@ -81,10 +270,23 @@ app.use("/api",InstructionRoute);
 
 
 
-//Tharaka
 
-app.use(bodyParser.json()); // Parse JSON bodies
+
+
+
+
+
+
+//Tharaka
 app.use("/products", router);
+
+
+
+
+
+
+
+
 
 
 
@@ -155,59 +357,9 @@ app.use("/users2",router2);
 
 
 
-
-
-
-
-
-
-
-
-
-
 //nalinda
 app.use("/eusers", userRoutes);
 app.use("/saddusers", userRoutes1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -285,51 +437,11 @@ app.use('/issues', issueRoutes); // Route for issues
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //senuri
+
+
+
+
 
 
 
