@@ -118,14 +118,14 @@ import HomeNalinda from "./Components/it22331786/Home/Home";
 
 
 //nalinda
-
-
-
-
-
-
-
-
+import Home from './Components/it22331786/Home/Home';
+import EUsers from './Components/it22331786/UserDetails/EUsers';
+import EaddUser from './Components/it22331786/EaddUser/EaddUser';
+import EUpdate from './Components/it22331786/EUpdate/EUpdate';
+import SalaryUsers from './Components/it22331786/UserDetails/SalaryUsers';
+import SalaryaddUser from './Components/it22331786/EaddUser/SalaryAddUser';
+import SalaryUpdate from './Components/it22331786/EUpdate/SalaryUpdate';
+import Gehome from './Components/it22331786/Home/Gehome'
 
 
 
@@ -279,15 +279,15 @@ function App() {
 
         {/* nalinda */}
         <Route path="/nalinda" element={<HomeNalinda />} />
-
-
-
-
-
-
-
-
-
+        <Route path="/nalinda" element={<HomeNalinda />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/ecreate" element={<EUsers />} />
+        <Route path='/eadd' element={<EaddUser />} />
+        <Route path="/ecreate/:id" element={<EUpdate />} />
+        <Route path="/screate" element={<SalaryUsers />} />
+        <Route path='/sadd' element={<SalaryaddUser />} />
+        <Route path="/screate/:id" element={<SalaryUpdate />} />
+        <Route path="/gehome" element={<Gehome />} />
 
 
 
