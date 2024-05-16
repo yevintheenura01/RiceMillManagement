@@ -15,7 +15,7 @@ function Home() {
     console.log("Searching for:", searchValue);
   };
 
-  return (<div><Eheader />
+  return (<div> <Eheader />
     <Container>
       <img src={banner} alt='Banner' style={{ width: '100%', marginBottom: '20px' }} />
       <Paper elevation={3} style={{ padding: '20px' }}>
@@ -40,39 +40,18 @@ function Home() {
             </Button>
           </Grid>
         </Grid>
-        <Grid container spacing={2} justify="center" style={{ marginTop: '20px' }}>
-          <Grid item xs={12} sm={6}>
-            <Link to="/eadd" style={{ textDecoration: 'none' }}>
-              <Button fullWidth variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                Add Employee Details
-              </Button>
-            </Link>
-          </Grid>
+        <Grid container spacing={2} justify="center">
           <Grid item xs={12} sm={6}>
             <Link to="/ecreate" style={{ textDecoration: 'none' }}>
               <Button fullWidth variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                Edit Employee Details
-              </Button>
-            </Link>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Link to="/sadd" style={{ textDecoration: 'none' }}>
-              <Button fullWidth variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                Calculate Payroll
+                Employee Generate Report
               </Button>
             </Link>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Link to="/screate" style={{ textDecoration: 'none' }}>
               <Button fullWidth variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                Edit Payroll Details
-              </Button>
-            </Link>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Link to="/gehome" style={{ textDecoration: 'none' }}>
-              <Button fullWidth variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                Generate Report
+                Salary Generate Report
               </Button>
             </Link>
           </Grid>
