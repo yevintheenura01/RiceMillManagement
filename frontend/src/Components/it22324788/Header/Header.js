@@ -123,8 +123,7 @@ function Header() {
                 >
                   <Button color="inherit">Home</Button>
                 </Link>
-                <Button color="inherit">Profile</Button>
-                <Button color="inherit">Logout</Button>
+                
                 <img
                   src={logo}
                   alt="Logo"
