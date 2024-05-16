@@ -25,7 +25,7 @@ import WorkerInstructions from "./Components/it22324788/Workers/Instructions/wIn
 import Wdamages from "./Components/it22324788/Workers/damages/Damages";
 
 import HomeYevin from "./Components/it22324788/Dashboard/Dashboard";
-import HomeNalinda from "./Components/it22331786/Home/Home";
+
 
 
 
@@ -118,13 +118,6 @@ import HomeNalinda from "./Components/it22331786/Home/Home";
 
 
 //nalinda
-
-
-
-
-
-
-
 
 
 
@@ -278,16 +271,7 @@ function App() {
 
 
         {/* nalinda */}
-        <Route path="/nalinda" element={<HomeNalinda />} />
-
-
-
-
-
-
-
-
-
+       
 
 
 
